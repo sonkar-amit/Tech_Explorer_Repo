@@ -1,0 +1,126 @@
+<!-- Fixed navbar -->
+<navigation-app></navigation-app>
+
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<!-- Page Content -->
+
+<div class="container">
+	<div class="row main-content">
+		<!-- Left -->
+		<div class="col-md-3">
+			<p class="lead">
+				Choose your Menu <span class="glyphicon glyphicon-cutlery"></span>
+			</p>
+			<div class="list-group">
+				<a class="list-group-items">Bakery</a>
+				<a class="list-group-items">Bevarages</a>
+                <a class="list-group-items">Dairy & Eggs</a>
+                <a class="list-group-items">Frozen & Ready to Cook</a>
+                <a class="list-group-items">Fruits & Vegetables</a>
+                <a class="list-group-items">Grocery & Staples </a>
+			</div>
+
+			<!-- Cart -->
+
+			<div class="list-group">
+				<div class="food-cart">
+					<span class="label-cart"> Your Food Cart</span>
+				</div>
+				<div>
+					<div class="list-group-item" *ngIf="foodCarts">
+						<div class="list-items-cart" *ngFor="let food of foodCarts">
+							<div class="label-name">
+								<span>{{food.Name}}</span>
+							</div>
+							<div class="label-quantity">
+								<span> {{food.Quantity}} </span>
+							</div>
+							<div class="label-price">
+								<span>{{food.Quantity * food.Price}}</span>
+								<span class="glyphicon glyphicon-remove anchor-cursor"	style="color: red !important" (click) = "removeFoodFromCart(food)"> </span>
+							</div>
+						</div>
+					</div>
+					<div>
+						<span *ngIf="!foodCarts">No food items are added</span>
+					</div>
+				</div>
+				<div class="list-group-item" *ngIf="totalAmount">
+					<span class="label-amount">Total Amount :</span>
+					 <span class="label-amount">Rs.{{totalAmount}}</span>
+				</div>
+				<a class="list-group-item margin-top"	style="background-color: #64A33E; color: #fff; cursor: pointer">
+				Place Order
+				<span class="glyphicon glyphicon-play"></span>
+				</a>
+			</div>
+		</div>
+
+		<!-- Right -->
+		<div class="col-md-9">
+			 
+		<!-- Search Bar -->	
+			<div id="custom-search-input">
+					<div class="input-group col-md-7">
+							<input #searchBox type="text" class="  search-query form-control" placeholder="Search Grocery" (keyup)="search(searchBox.value)"/>
+							<span class="input-group-btn">
+							<button class="btn btn-primary" type="button">
+								<span class=" glyphicon glyphicon-search"></span>
+							</button>
+							</span>
+					</div>
+			</div>
+			<div class="row" *ngIf="foods">	
+				<div class="col-md-3" *ngFor="let food of foods">
+					<div class="thumbnail">
+						<img src="public/images/{{food.image}}.jpg" style="width: 180px; height: 140px">
+						<div class="caption" style="text-align: center">
+							<span class="comdetails"></span> 
+							<h4 class="comdetails-lg">{{food.Name}}</h4>
+							<h4 class="comdetails-lg">
+								<span>{{food.Price}} Rs.</span>
+							</h4>
+						</div>
+						<div>
+							<div *ngIf="food.qty>0">
+								<div class="input-group">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default btn-number" (click)="decreaseQty(food)">
+											<span class="glyphicon glyphicon-minus"></span>
+										</button>
+									</span> 
+									<input type="text" class="form-control input-number food-qty-input" value="{{food.Quantity}}">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default btn-number" (click)="increaseQty(food)">
+											<span class="glyphicon glyphicon-plus"></span>
+										</button>
+									</span>
+								</div>
+							</div>
+							<div class="add-food-section" *ngIf="food.Quantity==0">
+								<button id="add-btn" class="btn btn-success" (click)="addFoodToCart(food)">
+									<span class="mob-hide">Add</span>
+									<span class=" margin-cart glyphicon glyphicon-shopping-cart"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- FOOTER -->
+	<footer>
+		<p class="pull-right">
+			<a href="#">Back to top</a>
+		</p>
+		<p>
+			&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+		</p>
+	</footer>
+</div>
+
+<!-- /.container -->

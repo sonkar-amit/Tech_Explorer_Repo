@@ -1,0 +1,16 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+.spinner-wrapper{
+    width:100%;
+    text-align:center;
+    margin-top:300px;
+}
+.spinner-wrapper i{
+    font-size:50px;
+}

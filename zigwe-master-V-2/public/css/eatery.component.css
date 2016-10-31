@@ -1,0 +1,104 @@
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.container {
+  margin-top: 85px;
+  min-height: 480px;
+}
+
+.list-group {
+  margin-bottom: 20px;
+  padding-left: 0px; 
+  text-align: center
+}
+
+.list-group-items {
+ padding: 10px 15px;
+  position: relative;
+  border: 2px solid #fff;
+  display: block;
+  background-color: #f1f1f1;
+  font-weight: bold;
+  text-align: left;
+}
+
+a.list-group-items:active{
+    background-color: #007cc3;
+    text-decoration: none !important;
+    color: white;
+}
+
+a.list-group-items:hover{
+    background-color: #007cc3;
+    text-decoration: none !important;
+    color: white;
+}
+
+.food-cart {
+background-color: #007cc3;
+ padding: 10px 15px;
+  position: relative;
+  border: 1px solid #ddd;
+  display: block;
+
+  font-weight: bold;
+
+}
+
+.label-cart {
+  border-top: 1px #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+.label-amount {
+  border-top: 1px #000;
+  font-weight: bold;
+}
+
+.label-name {
+  float: left; 
+  text-align: left;
+   width: 55%
+}
+
+.label-quantity {
+  float: left; 
+  text-align: right; 
+  width: 15%
+}
+
+.label-price {
+  float: left; 
+  text-align: right;
+   width: 30%
+}
+
+.lead {
+font-weight: bold;
+
+}
+
+.list-items-cart {
+  width: 100%;
+  min-height: 40px;
+}
+
+.list-group-item {
+  background-color: #f1f1f1;
+   border: 2px solid #fff
+}
+
+.thumbnail {
+  margin-top: 20px;
+ background-color: #f1f1f1;
+}
+
+.add-food-section,.food-qty-input{
+  text-align: center;
+}
+
+.main-content{
+  margin-bottom: 30px;
+}
